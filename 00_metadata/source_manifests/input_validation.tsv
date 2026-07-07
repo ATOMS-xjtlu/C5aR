@@ -1,0 +1,7 @@
+system	replicate	structure	trajectory	structure_exists	trajectory_exists	topology_exists	structure_atoms	trajectory_atoms	atom_count_match	frames	dt_ps	sampled_ns_frames_x_dt	last_time_ns	receptor_atoms	ligand_atoms	status	message
+BM213	rep1	gpcr/bm213/md-initial.pdb	gpcr/bm213/2wframe.xtc	True	True	True	4717	4717	True	20000	100	2000	2001.95	4581	136	ok	
+BM213	rep2	gpcr/bm213/second/md-initial.pdb	gpcr/bm213/second/2wframe.xtc	True	True	True	4717	4717	True	20000	100	2000	2001.88	4581	136	ok	
+BM213	rep3	gpcr/bm213/third/md-initial.pdb	gpcr/bm213/third/2wframe.xtc	True	True	True	4717	4717	True	20000	100	2000	2001.88	4581	136	ok	
+c5apep	rep1	gpcr/c5apep/md-initial.pdb	gpcr/c5apep/2wframe.xtc	True	True	True	4752	4752	True	20000	100	2000	2001.88	4614	138	ok	
+c5apep	rep2	gpcr/c5apep/second/md-initial.pdb	gpcr/c5apep/second/2wframe2.xtc	True	True	True	4752	4752	True	20000	100	2000	2001.88	4614	138	ok	
+c5apep	rep3	gpcr/c5apep/third/md-initial.pdb	gpcr/c5apep/third/2wframe3.xtc	True	True	True	4752	4752	True	20000	100	2000	2001.88	4614	138	ok	

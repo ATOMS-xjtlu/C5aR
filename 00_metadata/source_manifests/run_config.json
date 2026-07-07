@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-06-04T20:47:35",
+  "alloviz_python": "/mnt/e/app/conda-envs/alloviz/bin/python",
+  "alloviz_helper": "/mnt/e/work/modeling/c5ar/md/article/analysis/alloviz/scripts/alloviz_run_serial.py",
+  "pilot_pkgs": [
+    "GetContacts",
+    "correlationplus_CA_Pear",
+    "pytraj_CA"
+  ],
+  "formal_required": [
+    "GetContacts"
+  ],
+  "formal_optional": [
+    "correlationplus_CA_Pear",
+    "pytraj_CA"
+  ],
+  "systems": [
+    {
+      "key": "apo",
+      "label": "apo",
+      "role": "basal reference",
+      "pdb": "gpcr/apo/md-initial.pdb",
+      "trajs": [
+        "gpcr/apo/2000ns.xtc",
+        "gpcr/apo/second/2000ns.xtc",
+        "gpcr/apo/third/2000ns.xtc"
+      ],
+      "protein_sel": "protein"
+    },
+    {
+      "key": "BM213",
+      "label": "BM213",
+      "role": "G protein-biased / stronger agonist state",
+      "pdb": "gpcr/bm213/md-initial.pdb",
+      "trajs": [
+        "gpcr/bm213/2wframe.xtc",
+        "gpcr/bm213/second/2wframe.xtc",
+        "gpcr/bm213/third/2wframe.xtc"
+      ],
+      "protein_sel": "protein and not resid 282-289"
+    },
+    {
+      "key": "C5apep",
+      "label": "C5apep",
+      "role": "partial efficacy state",
+      "pdb": "gpcr/c5apep/md-initial.pdb",
+      "trajs": [
+        "gpcr/c5apep/2wframe.xtc",
+        "gpcr/c5apep/second/2wframe2.xtc",
+        "gpcr/c5apep/third/2wframe3.xtc"
+      ],
+      "protein_sel": "protein"
+    }
+  ]
+}

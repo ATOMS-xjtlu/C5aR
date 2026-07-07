@@ -1,0 +1,9 @@
+# MD System Summary Table
+
+| System | Number of molecules | Number of atoms | Number of water | Number of ions | lipid | BOX size | Simulation time |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| apo | 21209 | 94336 | 20882 | 126 (56 Na+, 70 Cl-) | 200 POP | 89.217 x 89.217 x 127.674 A^3 | 2 us x 3 replicas = 6 us |
+| BM213 | 20143 | 91098 | 19820 | 121 (53 Na+, 68 Cl-) | 200 POP | 89.488 x 89.488 x 122.671 A^3 | 2 us x 3 replicas = 6 us |
+| C5apep | 20586 | 92456 | 20260 | 124 (54 Na+, 70 Cl-) | 200 POP | 89.466 x 89.466 x 124.497 A^3 | 2 us x 3 replicas = 6 us |
+
+Number of molecules is counted as independent molecular entities: receptor/ligand entities + lipid molecules + water molecules + ions. Protein residues are not counted as separate molecules.

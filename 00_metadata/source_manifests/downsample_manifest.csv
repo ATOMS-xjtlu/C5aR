@@ -1,0 +1,10 @@
+profile,system,replicate,pdb,source_trajectory,downsampled_trajectory,stride,source_frames,expected_frames,produced_frames
+formal,apo,rep1,gpcr/apo/md-initial.pdb,gpcr/apo/2000ns.xtc,article/analysis/alloviz/inputs/downsampled/formal/apo_rep1_stride10.xtc,10,20000,2000,2000
+formal,apo,rep2,gpcr/apo/md-initial.pdb,gpcr/apo/second/2000ns.xtc,article/analysis/alloviz/inputs/downsampled/formal/apo_rep2_stride10.xtc,10,20000,2000,2000
+formal,apo,rep3,gpcr/apo/md-initial.pdb,gpcr/apo/third/2000ns.xtc,article/analysis/alloviz/inputs/downsampled/formal/apo_rep3_stride10.xtc,10,4000,400,400
+formal,BM213,rep1,gpcr/bm213/md-initial.pdb,gpcr/bm213/2wframe.xtc,article/analysis/alloviz/inputs/downsampled/formal/BM213_rep1_stride10.xtc,10,20000,2000,2000
+formal,BM213,rep2,gpcr/bm213/md-initial.pdb,gpcr/bm213/second/2wframe.xtc,article/analysis/alloviz/inputs/downsampled/formal/BM213_rep2_stride10.xtc,10,20000,2000,2000
+formal,BM213,rep3,gpcr/bm213/md-initial.pdb,gpcr/bm213/third/2wframe.xtc,article/analysis/alloviz/inputs/downsampled/formal/BM213_rep3_stride10.xtc,10,20000,2000,2000
+formal,C5apep,rep1,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/2wframe.xtc,article/analysis/alloviz/inputs/downsampled/formal/C5apep_rep1_stride10.xtc,10,20000,2000,2000
+formal,C5apep,rep2,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/second/2wframe2.xtc,article/analysis/alloviz/inputs/downsampled/formal/C5apep_rep2_stride10.xtc,10,20000,2000,2000
+formal,C5apep,rep3,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/third/2wframe3.xtc,article/analysis/alloviz/inputs/downsampled/formal/C5apep_rep3_stride10.xtc,10,20000,2000,2000

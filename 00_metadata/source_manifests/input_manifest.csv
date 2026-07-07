@@ -1,0 +1,10 @@
+system,label,role,replicate,pdb,trajectory,protein_sel,topology_atoms,trajectory_atoms,receptor_atoms,receptor_residues,frames,first_time_ps,last_time_ps
+apo,apo,basal reference,rep1,gpcr/apo/md-initial.pdb,gpcr/apo/2000ns.xtc,protein,4764,4764,4764,293,20000,1975.0,2001875.0
+apo,apo,basal reference,rep2,gpcr/apo/md-initial.pdb,gpcr/apo/second/2000ns.xtc,protein,4764,4764,4764,293,20000,1975.0,2001875.0
+apo,apo,basal reference,rep3,gpcr/apo/md-initial.pdb,gpcr/apo/third/2000ns.xtc,protein,4764,4764,4764,293,4000,1975.0,2001475.0
+BM213,BM213,G protein-biased / stronger agonist state,rep1,gpcr/bm213/md-initial.pdb,gpcr/bm213/2wframe.xtc,protein and not resid 282-289,4717,4717,4581,281,20000,1975.0,2001955.0
+BM213,BM213,G protein-biased / stronger agonist state,rep2,gpcr/bm213/md-initial.pdb,gpcr/bm213/second/2wframe.xtc,protein and not resid 282-289,4717,4717,4581,281,20000,1975.0,2001875.0
+BM213,BM213,G protein-biased / stronger agonist state,rep3,gpcr/bm213/md-initial.pdb,gpcr/bm213/third/2wframe.xtc,protein and not resid 282-289,4717,4717,4581,281,20000,1975.0,2001875.0
+C5apep,C5apep,partial efficacy state,rep1,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/2wframe.xtc,protein,4752,4752,4614,283,20000,1975.0,2001875.0
+C5apep,C5apep,partial efficacy state,rep2,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/second/2wframe2.xtc,protein,4752,4752,4614,283,20000,1975.0,2001875.0
+C5apep,C5apep,partial efficacy state,rep3,gpcr/c5apep/md-initial.pdb,gpcr/c5apep/third/2wframe3.xtc,protein,4752,4752,4614,283,20000,1975.0,2001875.0

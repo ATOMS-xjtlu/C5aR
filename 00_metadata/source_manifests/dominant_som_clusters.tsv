@@ -1,0 +1,4 @@
+system	dominant_cluster	frames	percentage	representative_pdb	representative_system	representative_replicate	time_ns	selection_rule
+apo	C6	2047	46.522727	article/analysis/sommd/pymol/formal/cluster_06_apo_rep1.pdb	apo	rep1	1020.975	highest percentage within each system
+BM213	C8	1900	31.666667	article/analysis/sommd/pymol/formal/cluster_08_BM213_rep2.pdb	BM213	rep2	1578.975	highest percentage within each system
+C5apep	C7	3943	65.716667	article/analysis/sommd/pymol/formal/cluster_07_C5apep_rep2.pdb	C5apep	rep2	1633.975	highest percentage within each system
