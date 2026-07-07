@@ -1,0 +1,49 @@
+parm ../input.parm7 #top
+trajin production_third_1.trj   # md3.trj 1 12500 1)112500
+trajin production_third_2.trj 
+trajin production_third_3.trj 
+trajin production_third_4.trj 
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#image origin center #
+strip :WAT|:SOD|:CLA|:POPC #
+#trajout 2000ns.xtc
+#trajout md-initial.pdb onlyframes 1-1 #
+#trajout 2000ns.pdb onlyframes 20000-20000 #
+#rms rms-lig mass :210-217@CA out try.dat
+#rms rms-7 mass :285-293@CA out rmsd_empty_h8.dat #C-alphaRMSD
+#rms rms-1 mass :14-46@CA out rmsd_empty_tm1.dat
+#distance 289-43 :289 :43 out dist-ion.dat#
+#distance apo :118@O :207@NH2 out TM45btm_hb.dat#
+#distance dist_231-271 :230@CD1,CE1,CZ,CE2,CD2,CG :271@CG geom out 230-271.dat
+#distance 289-279 :289 :279 out dist-pipi.dat#
+#rmsrms-lig mass :539-686@CA out rmsd-syt.dat #C-alphaRMSD
+#distance 230-234 :230@CD2,CG,CD1,CE1,CZ,CE2 :234@CD2,CE3,CZ3,CH2,CZ2,CE2 out dist-230-234.dat#
+#distance 271-275 :271@CG :275@CG  out dist-271-275.dat
+#distance apo :113@NH1 :201@OH out 113-201.dat#
+#atomicfluct out rmsf-TM3.dat :86-118@CA byres #C-alphaRMSF
+#distance bm213 :237@CE2,CD1 :234@CD2,CE2 out 234-237.dat#
+#distance dist_8-161 :8@CA :161@CA  out 8-161.dat
+#atomicfluct out rmsf-TM6.dat :220-246@CA byres
+#atomicfluct out rmsf-TM7.dat :247-282@CA byres
+#atomicfluct out rmsf-lig.dat lig :179&!@H= byres #ligandRMSF
+#radgyr :4-10&!(@H) out ROG.data mass nomax#ROG
+#distance dist_103-230 :103@CD :230@CG,CD1,CE1,CZ,CE2,CD2 geom out 103-230.dat
+#distance 133-83 :133 :83 out dist-133-83.dat#
+#distance apo1 :103@CD :230@CG,CD1,CE1,CZ,CE2,CD2 geom out 103-230.dat
+#distance 99-234 :99@CE :234@CD2,CE3,CZ3,CH2,CZ2,CE2 out dist-99-234.dat#
+#surf :1-600 out surf.out #1-200
+#distance dist_201-113 :201@OH :113@CZ  out 113-201.dat
+#distance dist_50-113 :50@CG :113@CZ  out 113-50.dat
+#atomicfluct out bfactor_residue.dat :1-198@CA,C,N byres  bfactor#b-facter
+#atomicfluct out bfactor_allatom.dat :1-198@CA,C,N byatom bfactor#
+#distance dist_54-279 :54@CG,CD1,CE1,CZ,CE2,CD2 :279@CG,CD1,CE1,CZ,CE2,CD2 geom out 54-279.dat
+#hbond angle 120.000 dist 3.600 donormask :113@F=,O=,N= acceptormask :201@F=,O=,N= out DRY_3.dat avgout DRY.dat#
+hbond angle 135.000 dist 3.000 donormask :234@NE1 acceptormask :271@F=,O=,N= out 255-292_apo_3.dat avgout 255-292_avg.dat
+hbond angle 145.000 dist 3.000 donormask :271@F=,O=,N= acceptormask :275@F=,O=,N= out 292-296_apo_3.dat avgout 292-296_avg.dat
+#hbond angle 120.000 dist 3.500 donormask :234@NE1 acceptormask :271@F=,O=,N= out apo_2.dat avgout 000.dat#
+run #

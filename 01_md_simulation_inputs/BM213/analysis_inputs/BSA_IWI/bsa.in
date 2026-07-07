@@ -1,0 +1,21 @@
+parm ../input.parm7 #top
+trajin ../production.trj # md3.trj 1 12500 1)112500
+trajin ../production1.trj
+trajin ../production2.trj
+#trajin ../production_third_4.trj
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#i0mage origin center #
+strip :WAT|:SOD|:CLA|:POPC|:1-57|:59-68|:70-82|:84-281
+#:1-57|:59-68|:70-82|:84-289 #
+
+
+# ----------  SASA ----------
+#surf :1,:2,:3  out sasa_sc_58_69_83.dat
+#surf :1-8 out sasa_lig.dat
+surf :1|:2|:3|:4-11 out sasa_total.dat
+run

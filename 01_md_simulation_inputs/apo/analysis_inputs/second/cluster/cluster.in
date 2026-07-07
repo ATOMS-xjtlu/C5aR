@@ -1,0 +1,7 @@
+parm ../../input.parm7 #top
+trajin ../production_second.trj # md3.trj 1 12500 1)112500
+trajin ../production_second_2.trj #
+trajin ../production_second_3.trj #
+trajin ../production_second_4.trj #
+
+cluster hieragglo epsilon 1.0 clusters 3 averagelinkage rms mass 103,193,230@CA,C,N out frame2cluster.dat summary summary.dat repout Cluster repfmt pdb

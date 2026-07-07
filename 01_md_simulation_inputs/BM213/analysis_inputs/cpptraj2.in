@@ -1,0 +1,9 @@
+parm md-initial.pdb
+trajin  2wframe.xtc
+trajin  ./second/2wframe.xtc
+trajin  ./third/2wframe.xtc
+
+
+distance dist_107-205 :107 :205  out 107-205-6us.dat
+
+run #

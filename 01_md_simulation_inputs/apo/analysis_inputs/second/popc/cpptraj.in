@@ -1,0 +1,22 @@
+# cpptraj_contacts.in
+parm ../../input.parm7
+trajin ../production_second.trj 1 5000 5 # md3.trj 1 12500 1)112500
+trajin ../production_second_2.trj 1 5000 5
+trajin ../production_second_3.trj 1 5000 5#
+trajin ../production_second_4.trj 1 5000 5#
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#image origin center #
+strip :WAT|:SOD|:CLA #
+#  vs  POPC contact time-series
+# —— :1-999POPC  residue name  POPCPOPC1 
+#  native contacts vs POPC
+nativecontacts (:1-293!@H=) (:POPC!@H=) \
+    distance 4.5 \
+    byresidue \
+    series seriesout prot_popc_series.dat \
+    out prot_popc_summary.dat

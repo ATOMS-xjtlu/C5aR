@@ -1,0 +1,34 @@
+parm ../input.parm7 #top
+trajin ../production.trj # md3.trj 1 12500 1)112500
+trajin ../production1.trj
+trajin ../production2.trj
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#image origin center #
+strip :WAT|(:Na+|:Cl-) #
+#trajout 2000ns.xtc
+#trajout md-initial.pdb onlyframes 1-1 #
+#trajout md-500ns-fix.pdb onlyframes 5000-5000 #
+#rms rms-lig mass :210-217@CA out try.dat
+#rms rms-7 mass :285-293@CA out rmsd_empty_h8.dat #C-alphaRMSD
+#rms rms-1 mass :14-46@CA out rmsd_empty_tm1.dat
+#distance 289-43 :289 :43 out dist-ion.dat#
+#distance apo :118@O :207@NH2 out TM45btm_hb.dat#
+#distance dist_231-271 :230@CD1,CE1,CZ,CE2,CD2,CG :271@CG geom out 230-271.dat
+#distance 289-279 :289 :279 out dist-pipi.dat#
+#rmsrms-lig mass :539-686@CA out rmsd-syt.dat #C-alphaRMSD
+#atomicfluct out rmsf-TM3.dat :86-118@CA byres #C-alphaRMSF
+#atomicfluct out rmsf-TM6.dat :220-246@CA byres
+#atomicfluct out rmsf-TM7.dat :247-282@CA byres
+#atomicfluct out rmsf-lig.dat lig :179&!@H= byres #ligandRMSF
+#radgyr :4-10&!(@H) out ROG.data mass nomax#ROG
+#distance 133-83 :133 :83 out dist-133-83.dat#
+#surf :1-600 out surf.out #1-200
+#atomicfluct out bfactor_residue.dat :1-198@CA,C,N byres  bfactor#b-facter
+#atomicfluct out bfactor_allatom.dat :1-198@CA,C,N byatom bfactor#
+hbond angle 120.000 dist 3.500 donormask :229@F=,O=,N= acceptormask :271,275@F=,O=,N= out hb229.dat avgout avghb229.dat#
+run #

@@ -1,0 +1,19 @@
+parm ../../input.parm7 #top
+trajin ../production_third_1.trj # md3.trj 1 12500 1)112500
+trajin ../production_third_2.trj
+trajin ../production_third_3.trj
+trajin ../production_third_4.trj
+#trajin ../production_third_4.trj
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#i0mage origin center #
+strip :WAT|:SOD|:CLA|:POPC #
+distance 261-265_1 :259@OD1 :263@ND2 out dist-261-265_1.dat #
+distance 261-265_2 :259@OD1 :263@OD1 out dist-261-265_2.dat #
+distance 261-265_3 :259@ND2 :263@OD1 out dist-261-265_3.dat #
+distance 261-265_4 :259@ND2 :263@ND2 out dist-261-265_4.dat #
+run

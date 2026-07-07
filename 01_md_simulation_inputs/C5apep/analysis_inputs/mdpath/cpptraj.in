@@ -1,0 +1,13 @@
+parm input.parm7 #top
+trajin production.trj # md3.trj 1 12500 1)112500
+trajin production1.trj
+trajin production2.trj
+trajin production
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#image origin center #
+strip :WAT|:SOD|:CLA|:POPC #

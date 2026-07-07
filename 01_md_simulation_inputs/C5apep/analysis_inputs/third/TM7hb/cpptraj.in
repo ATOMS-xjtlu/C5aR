@@ -1,0 +1,56 @@
+parm ../../input.parm7 #top
+trajin ../production_third_1.trj # md3.trj 1 12500 1)112500
+trajin ../production_third_2.trj
+trajin ../production_third_3.trj
+trajin ../production_third_4.trj
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#i0mage origin center #
+strip :WAT|:SOD|:CLA|:POPC #
+distance 261-265 :261@OD1 :265@ND2 out dist-261-265_1.dat #
+distance 261-265 :261@OD1 :265@OD1 out dist-261-265_2.dat #
+distance 261-265 :261@ND2 :265@OD1 out dist-261-265_3.dat #
+distance 261-265 :261@ND2 :265@ND2 out dist-261-265_4.dat #
+#rms rms-lig :284&!@H= out rmsd-pep3.dat
+#trajout 2000ns.xtc
+#trajout 2wframe.xtc
+#trajout md-initial.pdb onlyframes 1-1 #
+#trajout 2000ns.pdb onlyframes 4000-4000 #
+#rms rms-pro mass @CA out rmsd.dat #C-alphaRMS
+#rms rms-icl3 mass :204-221@CA out rmsd_icl3.dat
+#rms rms-TM56 mass :175-245@CA out rmsd-TM56.dat #C-alphaRMSD
+#rms rms-2 mass :252-281@CA out rmsd-c5a-tm7.dat
+#atomicfluct out rmsf-hook.dat :358-367@CA byres #C-alphaRMSF
+#atomicfluct out rmsf-lig.dat lig :179&!@H= byres #ligandRMSF
+#radgyr :4-10&!(@H) out ROG.data mass nomax#ROG
+#distance dist_231-271 :230@CD1,CE1,CZ,CE2,CD2,CG :271@CG geom out 230-271.dat
+#dihedral R3.50_ori :103@CG :103@CD :103@NE :103@CZ out R3.50ori_c5apep3.dat
+#dihedral W255_ori :224@N :224@CA :224@CB :224@CG out W255ori_c5apep3.dat
+#dihedral M120_ori :89@N :89@CA :89@CB :89@CG out M120ori_c5apep3.dat
+#distance c5apep_3 :89@CE :224@CA  out 140-235_TM46.dat
+#distance c5apep_3 :103@NH2 :191@OH  out 103-191_hb.dat
+#distance dist_227-89 :227@CD1,CE1,CZ,CE2,CD2,CG :89@CA geom out 227-89.dat
+#distance dist_201-TM6 :201@CD1,CE1,CZ,CE2,CD2,CG :225-230@CA geom out 201Y-TM6.dat
+#distance dist_TM62 :219-221@CA :49-51@CA geom out TM6-TM2.dat
+#distance 89-224 :89@CE :224@CD2,CE3,CZ3,CH2,CZ2,CE2 geom out dist-89-224.dat#
+#distance 220-191 :220@CD2,CG,CD1,CE1,CZ,CE2 :191@CD2,CE3,CZ3,CH2,CZ2,CE2 geom out dist-220-191.dat#
+#distance 261-265 :261@CG :265@CG  out dist-261-265.dat
+#distance dist_93-220 :93@CD :220@CG,CD1,CE1,CZ,CE2,CD2 geom out 93-220.dat
+#distance dist_229-275 :229@OG :275@OD1  out 229-275.dat
+#distance c5a :258@NZ :362@OD1 out TM7_258-362.dat#
+#distance dist_191-103 :191@OH :103@CZ  out 191-103.dat
+#distance dist_40-103 :40@CG :103@CZ  out 103-40.dat
+#distance apo :113@NH1 :201@OH out 113-201.dat#
+#distance 99-234 :99 :234 out dist-99-234.dat# 
+#atomicfluct out rmsf-TM3.dat :86-118@CA byres #C-alphaRMSF
+#atomicfluct out rmsf-TM6.dat :220-246@CA byres
+#atomicfluct out rmsf-TM7.dat :247-282@CA byres
+#surf :1-600 out surf.out #1-200
+#atomicfluct out bfactor_201Y.dat :201@CA,C,N,O byres  bfactor#b-facter
+#atomicfluct out bfactor_allatom.dat :1-198@CA,C,N byatom bfactor#
+#hbond angle 120.000 dist 3.500 donormask :224@NE1 acceptormask :261@F=,O=,N= out c5apep_1.dat avgout pep1.dat#
+run #

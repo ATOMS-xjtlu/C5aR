@@ -1,0 +1,67 @@
+parm input.parm7
+trajin production.trj 1 9448 8 # md3.trj 1 12500 1)112500
+trajin production1.trj 1 10000 10
+trajin production2.trj 1 552 8
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :68  mass origin #pbc
+#image origin center #
+#
+strip :SOD|:CLA|:POPC #
+trajout 2250frame_WAT.xtc  #xtc
+##trajouwframet md-nW.dcd
+trajout md-initial_WAT.pdb onlyframes 1-1 #
+#trajout bm2000ns_WAT.pdb onlyframes 138-138 #
+#rms rms-TM56 mass :163-233@CA out rmsd-TM56.dat #C-alphaRMSD
+#dihedral M120_ori :87@N :87@CA :87@CB :87@CG range360  out M120ori_bm213.dat
+#dihedral R3.50_bm1 :101@CA :101@CB :101@CG :101@CD range360 out R3.50_bm213_1.dat
+#dihedral W255_bm213_1 :222@N :222@CA :222@CB :222@CG range360 out W255ori_bm213_1.dat
+#dihedral W255_oriX2 :222@CA :222@CB :222@CG :222@CD2 range360 out W255ori_bm1_X2.dat
+#distance bm213_3 :46@CA :265@CA  out 46-265-TM72.dat
+#distance dist_138-233 :138@CA :233@CA  out 138-233_TM46.dat
+#distance bm213_1 :46@CA :266@CA  out 46-266_TM72.dat
+#distance bm213_1 :87@CE :222@CD2,CE3,CZ3,CH2,CZ2,CE2 geom out dist-87-222.dat#
+#distance bm213_225-87 :225@CD2,CE2,CZ,CE1,CC1,CG :87@CA geom out dist-225-257.dat#
+#distance bm213_1 :221@CD2,CE2,CZ,CE1,CC1,CG :262@CD geom out TM7_bm1.dat
+#rms rms-bm1 mass :282-289@CA out rmsd-bm1.dat
+#rms rms-lig :179&!@H= out rmsd-lig.dat #ligandRMSD
+#distance bm213_1 :87@CA :257@OH  out distY290_bm1.dat
+#distance TM6-7 :205@CA :269@CA  out TM67.dat#
+#dihedral bm213_2 :257@N :257@CA :257@CB :257@CG range360 out Y290bm1_X1.dat
+#dihedral bm_3 :267@N :267@CA :267@CB :267@CG range360 out Y300ori_bm_1.dat
+#distance  bm213_1 :181@CA :222@CZ3,CH2,CZ2,CE2,CD2,CE3 geom out bm1_W255-pIf.dat
+#distance bm1_tm62 :207@CA :38@CA  out TM62_IC_bm1.dat
+#distance bm1_tm72 :268@CA :38@CA  out TM72_IC_bm1.dat
+#distance bm2 :225@CD1,CE1,CZ,CE2,CD2,CG :87@CA geom out bm2_87-225.dat
+#distance M120_dist_bm1 :87@CE :49@CG out M120ori_dist_bm1.dat
+#atomicfluct out rmsf-protein.dat :162-230@CA byres #C-alphaRMSF
+#atomicfluct out rmsf-lig.dat lig :179&!@H= byres #ligandRMSF
+#RMSFcomplexalignCA
+#distance dist_101-189 :189@OH :101@CZ  out 101-189.dat
+#distance dist_38-101 :38@CG :101@CZ  out 101-38.dat
+#distance bm213_1 :218@CD2,CG,CD1,CE1,CZ,CE2 :189@CD2,CE3,CZ3,CH2,CZ2,CE2 geom out dist-189-218.dat#
+#distance 271-275 :259@CG :263@CG  out dist-259-263.dat
+#radgyr :4-10&!(@H) out ROG.data mass nomax#ROG
+#distance bm213_1 :259@CG :263@CG  out 259-263.dat
+#distance dist_TM7-TM1 :250-256@CA :6-11@CA geom out TM1-TM7.dat
+#distance bm213_1 :91@CD :218@CG,CD1,CE1,CZ,CE2,CD2 geom out 91-218.dat
+#distance 87-222 :87@CE :222@CD2,CE3,CZ3,CH2,CZ2,CE2 out dist-87-222.dat#
+#distance bm213_1 :221@CD2,CG,CD1,CE1,CZ,CE2 :262@CA geom out dist254-259.dat
+#distance dist_93-224 :91@CD :222@CZ3,CH2,CZ2,CE2,CD2,CE3 geom out 91-222.dat
+#distance bm213_1 :91@CD :218@CG,CD1,CE1,CZ,CE2,CD2 geom out 91-218.dat#
+#distance bm213_1 :38@CA :269@CA  out 38-269_TM72.dat
+#distance dist_87-222 :222 :87 out dist-87-222.dat
+#distance 208-274hb :208@NZ :274@OE1 out dist-208-274.dat#
+#surf :1-200 out surf.out #1-200
+#atomicfluct out bfactor_residue.dat :1-198@CA,C,N byres  bfactor#b-facter
+#atomicfluct out bfactor_allatom.dat :1-198@CA,C,N byatom bfactor#
+#hbond angle 130.000 dist 3.500 donormask :138@O= acceptormask :289@F=,O=,N= out 171hb_bm1.dat avgout 171hb_bm1_avg.dat
+#hbond angle 130.000 dist 3.500 donormask :232-233@O= acceptormask :283@F=,O=,N= out 264_265hb_bm1.dat avgout 264_265hb_bm1_avg.dat
+#hbond angle 130.000 dist 3.800 donormask :225@O= acceptormask :288@O=,N= out 258hb_bm1.dat avgout 258hb_bm1_avg.dat
+#hbond angle 110.000 dist 4.000 donormask :259@F=,O=,N= acceptormask :263@F=,O=,N= out 292-296_bm_1.dat avgout 292-296_avg.dat
+#hbond angle 130.000 dist 3.500 donormask :90@O= acceptormask :263@F=,O=,N= out 90_263hb_pep3.dat avgout 90_263hb_pep3_avg.dat
+#hbond angle 120.000 dist 3.500 donormask :222@NE1 acceptormask :259@F=,O=,N= out bm_1.dat avgout 000.dat#
+run 

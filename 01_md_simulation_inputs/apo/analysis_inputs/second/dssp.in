@@ -1,0 +1,8 @@
+parm md-initial.pdb   #
+trajin  2000ns.xtc 
+center origin :103&!@H= mass   #236
+image origin center familiar
+reference md-initial.pdb          #
+secstruct :202-222 out apo_2_icl3.gnu    #15-68dssp
+run
+quit

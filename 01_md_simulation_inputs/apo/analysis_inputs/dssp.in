@@ -1,0 +1,8 @@
+parm md-initial.pdb   #
+trajin  2000ns.xtc 
+center origin :91&!@H= mass   #236
+image origin center familiar
+reference md-initial.pdb          #
+secstruct :107-137 out dssp_icl2.gnu    #15-68dssp
+run
+quit

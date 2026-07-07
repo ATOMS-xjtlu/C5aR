@@ -1,0 +1,59 @@
+parm input.parm7 #top
+trajin production.trj  1 5000 5# md3.trj 1 12500 1)112500
+trajin production1.trj 1 10000 5
+trajin production2.trj 1 5000 5
+#trajin production1.trj
+#countframes #
+#reference complex-amber.pdb
+#fiximagedbonds
+autoimage #pbc
+rms first @CA #fitfitreference
+#center :340  mass origin #pbc
+#image origin center #
+strip :SOD|:CLA|:POPC #
+#trajout 4000frame_WAT.xtc
+#trajout md-initial_WAT.pdb onlyframes 1-1 #
+trajout pep1_2us_WAT.pdb onlyframes 4000-4000 #
+#rms rms-lig :284&!@H= out rmsd-lig.dat #ligandRMSD
+#distance  :89@CE :227@CD2,CE2,CZ,CE1,CC1,CG out dist-91-229.dat#
+#distance c5apep_1 :44@CA :271@CA  out 44-271-TM72.dat
+#distance dist_40-206 :40@CA :206@CA out dist-40-206.dat
+#rms rms-pro mass @CA out rmsd.dat #C-alphaRMS
+#rms pep1 mass :1-283@CA out rmsd-pep1.dat
+#dihedral M120_pep1 :89@CA :89@CB :89@CG :89@SD range360 out M120ori_c5apep1_X2.dat
+#dihedral W255_oriX2 :224@CA :224@CB :224@CG :224@CD2 range360 out W255ori_c5apep1_X2.dat
+#distance pep_3 :223@CD2,CE2,CZ,CE1,CC1,CG :264@CD geom out TM7_pep1.dat
+#distance pep1_tm62 :209@CA :40@CA  out TM62_IC_pep1.dat
+#distance pep1_tm72 :270@CA :40@CA  out TM72_IC_pep1.dat
+#istance c5apep_1 :140@CA :235@CA  out TM46_EC_pep1.dat
+#dihedral pep_1 :269@N :269@CA :269@CB :269@CG range360 out Y300ori_pep_1.dat
+#distance M120_dist_pep1 :89@CE :51@CG out M120ori_dist_pep1
+#distance pep_1 :89@CA :259@OH  out distY290_pep1.dat
+#distance pep1 :183@CA :224@CZ3,CH2,CZ2,CE2,CD2,CE3 geom out pep1_W255-pIf.dat
+#dihedral R3.50_pep1 :103@CA :103@CB :103@CG :103@CD range360 out R3.50_pep1_X2.dat
+#rms rms-icl3 mass :194-211@CA out rmsd-icl3.dat #C-alphaRMSD
+#distance dist_220_261 :220@CD1,CE1,CZ,CE2,CD2,CG :261@CG geom out 220-261.dat
+#hbond angle 120.000 dist 3.600 donormask :224@NE1 acceptormask :261@F=,O=,N= out nhb.dat avgout avghb.dat#
+#atomicfluct out rmsf-syt.dat :539-686@CA byres #C-alphaRMSF
+#atomicfluct out rmsf-lig.dat lig :179&!@H= byres #ligandRMSF
+#radgyr :4-10&!(@H) out ROG.data mass nomax#ROG
+#distance 89-224 :89 :224 out dist-89-224.dat#
+#distance dist_TM7-TM1 :261@CG :265@CG  out 261-265.dat
+#distance c5apep :191@OH :103@NH1 out TM45-191-103.dat#
+#distance pep1 :191@CE :224@CD2,CE3,CZ3,CH2,CZ2,CE2 out dist-89-224.dat#
+#distance c5apep_1 :40@CA :271@CA  out 40-271_TM72.dat
+distance dist_191-103 :191@OH :103@CZ  out 191-103.dat
+#distance dist_40-103 :40@CG :103@CZ  out 103-40.dat
+#distance pep1 :191@CG,CD1,CE1,CZ,CE2,CD2 :220@CG,CD1,CE1,CZ,CE2,CD2 geom out DRY_PIF_pep1.dat
+#hbond angle 120.000 dist 3.600 donormask :103@F=,O=,N= acceptormask :191@F=,O=,N= out DRY_1.dat avgout DRY.dat#
+#surf :1-600 out surf.out #1-200
+#atomicfluct out bfactor_residue.dat :1-198@CA,C,N byres  bfactor#b-facter
+#hbond angle 110.000 dist 3.500 donormask :224@NE1 acceptormask :261@F=,O=,N= out 255-292_pep_1.dat avgout 255-292_avg.dat
+#hbond angle 120.000 dist 3.500 donormask :261@F=,O=,N= acceptormask :265@F=,O=,N= out 292-296_pep_1.dat avgout 292-296_avg.dat
+#atomicfluct out bfactor_allatom.dat :1-198@CA,C,N byatom bfactor#
+#hbond angle 120.000 dist 3.500 donormask :224@NE1 acceptormask :261@F=,O=,N= out c5apep_1.dat avgout pep1.dat#
+#hbond angle 120.000 dist 3.500 donormask: 208-209@F=,O=,N= acceptormask:272@F=,O=,N= out nhb.dat avgout avghb.dat#
+#hbond angle 130.000 dist 3.500 donormask :140@O= acceptormask :284@F=,O=,N= out 171hb_pep1.dat avgout 171hb_pep1_avg.dat
+#hbond angle 130.000 dist 3.500 donormask :234-235@O= acceptormask :284@F=,O=,N= out 264_265hb_pep1.dat avgout 264_265hb_pep1_avg.dat
+hbond angle 130.000 dist 3.500 donormask :92@O= acceptormask :265@F=,O=,N= out 92_265hb_pep1.dat avgout 92_265hb_pep1_avg.dat
+run #

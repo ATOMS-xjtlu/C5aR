@@ -1,0 +1,9 @@
+parm complex-dry.top   #
+trajin 2000nsnoskip.xtc  # md3.trj 1 12500 1)112500 
+#center origin :91&!@H= mass   #236
+autoimage
+#image origin center familiar
+#reference md-initial.pdb          #
+secstruct :1-290 out dssp_all.gnu    #15-68dssp
+run
+quit
